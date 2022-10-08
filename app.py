@@ -4,14 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def principal():
-    fruta1 = "Morango"
-    fruta2 = "Uva"
-    fruta3 = "Maça"
-    fruta4 = "Laranja"
-    return render_template("index.html", fruta1=fruta1,
-                                        fruta2=fruta2,
-                                        fruta3=fruta3,
-                                        fruta4=fruta4)
+    frutas = ["Morango", "Uva", "Laranja", "Manga", "Pêra", "Melão"]
+    return render_template("index.html", frutas=frutas)
 
 @app.route('/sobre')
 def sobre():
