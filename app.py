@@ -9,6 +9,7 @@ def principal():
 
 @app.route('/sobre')
 def sobre():
-    return render_template('sobre.html')
+    notas = {"Fulano":5.0, "Beltrano":6.0, "Aluno":8.0}
+    return render_template('sobre.html', notas=notas)
 
 #http://127.0.0.1:5000
