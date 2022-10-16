@@ -26,9 +26,19 @@ def sobre():
     return render_template('sobre.html', registros=registros)
 
 
-@app.route('/filmes')
-def filmes():
-    url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+@app.route('/filmes/<propriedade>')
+def filmes(propriedade):
+    if propriedade == 'populares':
+        url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+    elif propriedade == 'kids':
+        url = "https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+    elif propriedade == '2010':
+        url = "https://api.themoviedb.org/3/discover/movie?primary_release_year=2010&sort_by=vote_average.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+    elif propriedade == 'drama':
+        url = "https://api.themoviedb.org/3/discover/movie?with_genres=18&primary_release_year=2014&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+    elif propriedade == 'tom_cruise':
+        url = "https://api.themoviedb.org/3/discover/movie?with_genres=878&with_cast=500&sort_by=vote_average.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+    
     resposta = urllib.request.urlopen(url)
     dados = resposta.read()
     jsondata = json.loads(dados)

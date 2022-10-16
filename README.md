@@ -34,6 +34,9 @@ https://api.themoviedb.org/3/discover/movie?certification_country=US&certificati
 # Filmes 2010
 https://api.themoviedb.org/3/discover/movie?primary_release_year=2010&sort_by=vote_average.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594
 
+# Filmes drama
+https://api.themoviedb.org/3/discover/movie?with_genres=18&primary_release_year=2014&api_key=acff65ba7f73c32ae962dcc8dd6de594
+
 # tom cruize
 https://api.themoviedb.org/3/discover/movie?with_genres=878&with_cast=500&sort_by=vote_average.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594
 
