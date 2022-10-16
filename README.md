@@ -14,3 +14,21 @@ set FLASK_ENV=development
 if __name__=="__main__":
     app.run(debug=True)
 
+
+# api_TMDB
+Exemplo de Requisição de API
+
+https://api.themoviedb.org/3/movie/550?api_key=acff65ba7f73c32ae962dcc8dd6de594
+
+https://image.tmdb.org/t/p/w500//rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg
+
+/discover/movie?sort_by=popularity.desc
+
+# Filmes mais populares
+https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594
+
+# Filmes mais populares para crianças
+https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594
+
+
+
