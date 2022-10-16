@@ -1,6 +1,9 @@
 #from crypt import methods
 from flask import Flask, render_template, request
+import urllib.request, json
+
 app = Flask(__name__)
+
 frutas = []
 registros = []
 
@@ -21,6 +24,16 @@ def sobre():
             registros.append({"aluno": request.form.get("aluno"), "nota": request.form.get("nota")})
     
     return render_template('sobre.html', registros=registros)
+
+
+@app.route('/filmes')
+def filmes():
+    url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=acff65ba7f73c32ae962dcc8dd6de594"
+    resposta = urllib.request.urlopen(url)
+    dados = resposta.read()
+    jsondata = json.loads(dados)
+    return render_template("filmes.html", filmes=jsondata['results'])
+
 
 if __name__=="__main__":
     app.run(debug=True)
