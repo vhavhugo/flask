@@ -47,5 +47,14 @@ https://api.themoviedb.org/3/discover/movie?with_genres=878&with_cast=500&sort_b
 - Filmes Drama
 - Tom Cruize
 
+# MYSQL
+https://dev.mysql.com/downloads/file/?id=514518
+
+
+# Colocar no path do windows
+C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+# no prompt
+mysql -u root -p
 
 
